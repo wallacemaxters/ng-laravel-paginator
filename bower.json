@@ -12,7 +12,10 @@
   "homepage": "https://github.com/wallacemaxters/ng-laravel-paginator",
   "main": "./src/ng-laravel-paginator.js",
   "ignore": [
-    "**/*",
+    "index.html",
+    "demo_laravel.json",
+    ".gitignore",
+    "readme.md",
     "node_modules",
     "bower_components",
     "example"
