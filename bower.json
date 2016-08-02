@@ -4,7 +4,7 @@
   "authors": [
     "Wallace de Souza Vizerra <wallacemaxters@gmail.com>"
   ],
-  "description": "",
+  "description": "Package that provides a way to make easy the integration of pagination Laravel with the AngularJS interface",
   "keywords": [
     "laravel",
     "paginator"
@@ -17,6 +17,6 @@
     "example",
     "readme.md",
     "index.html",
-    "demo_laravel.json",
+    "demo_laravel.json"
   ]
 }
