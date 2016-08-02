@@ -5,6 +5,11 @@ This package provides a easy way to use Pagination of the Laravel with AngularJS
 
 See example [here](https://rawgit.com/wallacemaxters/ng-laravel-paginator/master/index.html)
 
+#Install via bower
+
+```bash
+bower install https://github.com/wallacemaxters/ng-laravel-paginator.git
+```
 
 
 In Laravel method, you can use paginator like this:
@@ -47,3 +52,5 @@ Html:
     <div ng-show="users.busy">Loading</div>
 </div>
 ```
+
+
