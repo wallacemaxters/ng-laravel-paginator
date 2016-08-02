@@ -1,0 +1,6 @@
+{
+  "name": "ng-laravel-paginator",
+  "license": "MIT",
+  "main": "./ng-laravel-paginator.js",
+  "ignore": []
+}

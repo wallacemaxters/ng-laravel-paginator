@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NG  Laravel Paginator</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.angularjs.org/1.5.8/angular.min.js"></script>
+    <script src="./src/ng-laravel-paginator.js"></script>
+    <script>
+        var app = angular.module('test', ['ng-laravel-paginator']);
+
+        app.controller('TestController', function ($scope, LaravelPaginator) {
+            $scope.users = new LaravelPaginator('./demo_laravel.json');
+        });
+
+    </script>
+</head>
+<body ng-app="test">
+    <div ng-controller="TestController" class="container">
+        <h1>Test NG Laravel Paginator</h1>
+        <div class="alert alert-info">
+            Showing {{ users.total }} of  {{ users.currentPage }} pages.
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>nome</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="user in users.data">
+                    <td ng-bind="user.id"></td>
+                    <td ng-bind="user.name"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div ng-show="users.busy">Loading</div>
+        
+        <button ng-hide="users.busy" class="btn btn-primary" ng-click="users.next()">Load more</button>
+    </div>
+</body>
+</html>
