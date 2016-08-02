@@ -1,6 +1,6 @@
 {
   "name": "ng-laravel-paginator",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A package for angular to easy integration with Laravel pagination",
   "main": ".src/ng-laravel-collection.js",
   "scripts": {
