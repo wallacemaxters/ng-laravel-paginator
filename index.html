@@ -9,7 +9,10 @@
         var app = angular.module('test', ['ng-laravel-paginator']);
 
         app.controller('TestController', function ($scope, LaravelPaginator) {
+
             $scope.users = new LaravelPaginator('./demo_laravel.json');
+
+            console.log($scope.users instanceof LaravelPaginator)
         });
 
     </script>
@@ -37,7 +40,6 @@
         </table>
 
         <div ng-show="users.busy">Loading</div>
-        
         <button ng-hide="users.busy" class="btn btn-primary" ng-click="users.next()">Load more</button>
     </div>
 </body>

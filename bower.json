@@ -1,6 +1,22 @@
 {
   "name": "ng-laravel-paginator",
   "license": "MIT",
-  "main": "./ng-laravel-paginator.js",
-  "ignore": []
+  "authors": [
+    "Wallace de Souza Vizerra <wallacemaxters@gmail.com>"
+  ],
+  "description": "",
+  "keywords": [
+    "laravel",
+    "paginator"
+  ],
+  "homepage": "https://github.com/wallacemaxters/ng-laravel-paginator",
+  "main": "./src/ng-laravel-paginator.js",
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "example",
+    "readme.md",
+    "index.html",
+    "demo_laravel.json",
+  ]
 }
