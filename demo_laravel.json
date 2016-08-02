@@ -1,9 +1,9 @@
 {
-    "total": 1010,
-    "per_page": 15,
+    "total": 8, 
+    "per_page": 15, 
     "current_page": 5,
-    "last_page": 68,
-    "next_page_url": "demo_laravel.json?page=2",
+    "last_page": 68, 
+    "next_page_url": "demo_laravel.json?page=2", 
     "prev_page_url": null,
     "from": 1,
     "to": 15,

@@ -18,7 +18,8 @@
     <div ng-controller="TestController" class="container">
         <h1>Test NG Laravel Paginator</h1>
         <div class="alert alert-info">
-            Showing {{ users.total }} of  {{ users.currentPage }} pages.
+            <p>Showing {{ users.data.length }} of  {{ users.total }} * users. Current page is {{ users.currentPage }} *.</p>
+            <p><small>Marked with * is Laravel result</small></p>
         </div>
         <table class="table">
             <thead>
