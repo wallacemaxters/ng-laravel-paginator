@@ -1,6 +1,6 @@
 angular.module('ng-laravel-paginator', [])
 
-.factory('LaravelPaginator', ['$http', '$q', function ($http, $q) {
+.factory('LaravelPaginator', ['$http', function ($http) {
 
     var Paginator = function (url, params, method) {
 
@@ -90,7 +90,6 @@ angular.module('ng-laravel-paginator', [])
                 that.from        = data.from;
                 that.lastPage    = data.last_page;
                 that.nextUrl     = data.next_page_url;
-                //that.perPage     = data.per_page;
                 that.previousUrl = data.prev_page_url;
                 that.to          = data.to;
                 that.total       = data.total;
