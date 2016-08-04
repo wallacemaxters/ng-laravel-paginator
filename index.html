@@ -29,12 +29,21 @@
                 <tr>
                     <th>id</th>
                     <th>nome</th>
+                    <th width="15%"></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="user in users.data">
                     <td ng-bind="user.id"></td>
                     <td ng-bind="user.name"></td>
+                    <td>
+                        <button class="btn btn-primary" ng-click="users.moveToLast(user)">
+                            Down
+                        </button>
+                        <button class="btn btn-primary" ng-click="users.moveToFirst(user)">
+                            UP
+                        </button>
+                    </td>
                 </tr>
             </tbody>
         </table>
