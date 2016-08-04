@@ -45,7 +45,7 @@ angular.module('ng-laravel-paginator', [])
 
         if (index === -1) return null;
 
-        return this.data.splice(index, 1);
+        return this.data.splice(index, 1)[0];
     };
 
     Paginator.prototype.moveToFirst = function (item) {
