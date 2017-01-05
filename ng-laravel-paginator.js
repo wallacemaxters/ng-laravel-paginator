@@ -30,6 +30,8 @@ angular.module('ng-laravel-paginator', [])
 
         this.total = 0;
 
+        this.currentResponse = null;
+
         this.next();
 
     };
@@ -82,7 +84,11 @@ angular.module('ng-laravel-paginator', [])
 
             }).then(function (response) {
 
+                that.currentResponse = response;
+
                 data = response.data;
+
+                that.currentResponse = data;
 
                 that.busy        = false;
                 that.currentPage = data.current_page;
