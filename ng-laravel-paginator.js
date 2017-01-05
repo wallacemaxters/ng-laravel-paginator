@@ -88,8 +88,6 @@ angular.module('ng-laravel-paginator', [])
 
                 data = response.data;
 
-                that.currentResponse = data;
-
                 that.busy        = false;
                 that.currentPage = data.current_page;
                 that.data        = that.data.concat(data.data);
