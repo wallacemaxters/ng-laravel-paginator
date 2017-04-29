@@ -90,7 +90,7 @@ angular.module('ng-laravel-paginator', [])
 
                 that.busy        = false;
                 that.currentPage = data.current_page;
-                that.data        = data.data;
+                that.data        = (addToOriginal) ? that.data.concat(data.data) : data.data;
                 that.from        = data.from;
                 that.lastPage    = data.last_page;
                 that.nextUrl     = data.next_page_url;
@@ -127,7 +127,7 @@ angular.module('ng-laravel-paginator', [])
 
                 that.busy        = false;
                 that.currentPage = data.current_page;
-                that.data        = (addToOriginal) ? that.data.concat(data.data) : data.data;
+                that.data        = data.data;
                 that.from        = data.from;
                 that.lastPage    = data.last_page;
                 that.nextUrl     = data.next_page_url;
