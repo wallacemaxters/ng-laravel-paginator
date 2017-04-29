@@ -66,7 +66,7 @@ angular.module('ng-laravel-paginator', [])
             this.data.push(value);
     };
 
-    Paginator.prototype.next = function () {
+    Paginator.prototype.next = function (addToOriginal = true) {
 
         var that = this, data;
 
@@ -90,7 +90,7 @@ angular.module('ng-laravel-paginator', [])
 
                 that.busy        = false;
                 that.currentPage = data.current_page;
-                that.data        = that.data.concat(data.data);
+                that.data        = (addToOriginal) ? that.data.concat(data.data) : data.data;
                 that.from        = data.from;
                 that.lastPage    = data.last_page;
                 that.nextUrl     = data.next_page_url;
