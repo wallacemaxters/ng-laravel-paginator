@@ -28,6 +28,10 @@ var app = angular.module('test', ['ng-laravel-paginator']);
 app.controller('TestController', function ($scope, LaravelPaginator) {
     $scope.users = new LaravelPaginator('/users/list');
     // Or with query string
+    // in case you do like this in your Laravel app:
+    // Route::get('/users/list/{search}', function ($search) {       
+    //     return User::paginate();
+    // });
     $scope.users = new LaravelPaginator('/users/list', {
         search: 'wallace'
     });
