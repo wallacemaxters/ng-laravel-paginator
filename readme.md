@@ -1,11 +1,11 @@
-#NG Laravel Paginator
+## NG Laravel Paginator
 
 This package provides a easy way to use Pagination of the Laravel with AngularJS interface
 
 
 See example [here](https://rawgit.com/wallacemaxters/ng-laravel-paginator/master/index.html)
 
-#Install via bower
+## Install via bower
 
 ```bash
 bower install https://github.com/wallacemaxters/ng-laravel-paginator.git
@@ -28,6 +28,10 @@ var app = angular.module('test', ['ng-laravel-paginator']);
 app.controller('TestController', function ($scope, LaravelPaginator) {
     $scope.users = new LaravelPaginator('/users/list');
     // Or with query string
+    // in case you do like this in your Laravel app:
+    // Route::get('/users/list/{search}', function ($search) {       
+    //     return User::paginate();
+    // });
     $scope.users = new LaravelPaginator('/users/list', {
         search: 'wallace'
     });
