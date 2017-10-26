@@ -6,8 +6,6 @@ angular.module('ng-laravel-paginator', [])
 
         this.busy = false;
 
-        this.completed = false;
-
         this.currentPage = 1;
 
         this.data = [];
@@ -54,7 +52,7 @@ angular.module('ng-laravel-paginator', [])
 
         var value = this.remove(item);
 
-        if (value !== null) 
+        if (value !== null)
             this.data.unshift(value);
     };
 
@@ -66,17 +64,18 @@ angular.module('ng-laravel-paginator', [])
             this.data.push(value);
     };
 
-    Paginator.prototype.next = function () {
-
+    Paginator.prototype.getData = function (action) {
         var that = this, data;
 
-        if (that.busy || that.completed) return;
+        var actionUrl = (action === 'next') ? this.nextUrl || this.startUrl : this.previousUrl
+
+        if (that.busy) return;
 
         that.busy = true;
 
         return $http({
 
-                url: this.nextUrl || this.startUrl,
+                url: actionUrl,
 
                 params: this.params,
 
@@ -86,11 +85,11 @@ angular.module('ng-laravel-paginator', [])
 
                 that.currentResponse = response;
 
-                data = response.data;
+                data = response.data.data;
 
                 that.busy        = false;
                 that.currentPage = data.current_page;
-                that.data        = that.data.concat(data.data);
+                that.data        = data.data;
                 that.from        = data.from;
                 that.lastPage    = data.last_page;
                 that.nextUrl     = data.next_page_url;
@@ -98,9 +97,17 @@ angular.module('ng-laravel-paginator', [])
                 that.to          = data.to;
                 that.total       = data.total;
 
-                if (! data.next_page_url) that.completed = true;
-
             });
+    };
+
+    Paginator.prototype.next = function () {
+
+        this.getData('next');
+    };
+
+    Paginator.prototype.previous = function () {
+
+        this.getData('previous');
     };
 
     return Paginator;
